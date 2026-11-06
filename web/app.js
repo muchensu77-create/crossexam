@@ -394,8 +394,7 @@ function VendorView({ vendorId }) {
         html`<p class="small muted" style=${{ marginBottom: 0 }}>
             Hidden from a human reader on page ${hidden[0].page}. Found in the sandbox and kept away from the model:
           </p>
-          <div class="hidden-text">${hidden.map((item) => item.text).join("
-")}</div>`}
+          <div class="hidden-text">${hidden.map((item) => item.text).join("\n")}</div>`}
       </div>`}
 
     ${result &&
