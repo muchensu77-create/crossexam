@@ -1,0 +1,10 @@
+fastapi>=0.115
+uvicorn[standard]>=0.32
+httpx>=0.27
+pydantic>=2.9
+pymupdf>=1.26
+rapidfuzz>=3.10
+sse-starlette>=2.1
+python-multipart>=0.0.12
+reportlab>=4.2
+pytest>=8.3

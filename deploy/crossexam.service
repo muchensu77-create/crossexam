@@ -1,0 +1,15 @@
+[Unit]
+Description=Crossexam web application
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+User=crossexam
+WorkingDirectory=/opt/crossexam
+EnvironmentFile=/etc/crossexam.env
+ExecStart=/opt/crossexam/.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000 --proxy-headers
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,78 @@
+{
+  "generated": "2026-11-06",
+  "headline": "A forward check cannot see a contract that went bad after award.",
+  "method": "120 forged claims and 50 honest claims built from real federal contracts on USAspending.gov, run through the production code. The records are real and the forgeries are ours, so the right answer is known.",
+  "stats": [
+    {
+      "value": "0 of 40",
+      "label": "post-award problems caught by forward checks"
+    },
+    {
+      "value": "39 of 40",
+      "label": "caught once the reverse pass runs"
+    },
+    {
+      "value": "1 of 50",
+      "label": "honest claims sent to a person for review"
+    },
+    {
+      "value": "50 of 50",
+      "label": "real default terminations found by the portfolio sweep"
+    }
+  ],
+  "rows": [
+    {
+      "kind": "inflated_value",
+      "label": "Value inflated 1.5x to 3x",
+      "cases": 20,
+      "forward": "20 of 20",
+      "full": "20 of 20"
+    },
+    {
+      "kind": "someone_elses_contract",
+      "label": "Another company's contract",
+      "cases": 20,
+      "forward": "20 of 20",
+      "full": "20 of 20"
+    },
+    {
+      "kind": "invented_contract",
+      "label": "Contract number invented",
+      "cases": 20,
+      "forward": "20 of 20",
+      "full": "20 of 20"
+    },
+    {
+      "kind": "stretched_dates",
+      "label": "End date stretched 1 to 2 years",
+      "cases": 20,
+      "forward": "20 of 20",
+      "full": "20 of 20"
+    },
+    {
+      "kind": "terminated_claimed_as_completed",
+      "label": "Terminated for default, claimed as completed",
+      "cases": 20,
+      "forward": "0 of 20",
+      "full": "20 of 20"
+    },
+    {
+      "kind": "default_left_out",
+      "label": "Clean claim, default on another contract left out",
+      "cases": 20,
+      "forward": "0 of 20",
+      "full": "19 of 20"
+    }
+  ],
+  "note": "How to read this: we wrote these forgeries knowing the rules, so the rows show that each check works end to end on real records. They are not a field accuracy rate. The sweep figure is the harder test: real terminations sampled with wider search words than the product uses. Text search alone found 41 of 50; action codes raised that to 50. A termination worded with none of those search words would not be in the sample, and the action-code scan reads only a vendor's latest 25 contracts, which is the likely cause of the one miss above. Honest claims flagged, by rule: {'CX-08': 1}.",
+  "recall": {
+    "sample": 50,
+    "text_only": 41,
+    "with_action_codes": 50
+  },
+  "forward_caught": 80,
+  "full_caught": 119,
+  "forged": 120,
+  "seed": 20261107,
+  "elapsed_s": 2117
+}
