@@ -208,9 +208,11 @@ function ClaimRows({ claims }) {
         <div class="c">
           ${reverse.length
             ? reverse.map((item) => html`<${Finding} item=${item} />`)
-            : record
-              ? html`<${Chip} value="pass" label=${`${record.actions.length} modifications, none adverse`} />`
-              : html`<span class="small muted">No record to examine.</span>`}
+            : !record
+              ? html`<span class="small muted">No record to examine.</span>`
+              : forward.some((item) => item.rule === "CX-02")
+                ? html`<span class="small muted">Not examined. This record belongs to another company.</span>`
+                : html`<${Chip} value="pass" label=${`${record.actions.length} ${record.actions.length === 1 ? "action" : "actions"} on record, none adverse`} />`}
         </div>
       `;
     })}

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crossexam</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root { --paper:#f6f3ec; --sheet:#fffdf8; --ink:#1c1b19; --ink2:#5b574f; --rule:#ddd7ca; --pine:#1d3b36; --good:#1f6b4f; --goodt:#dfeee6; --warn:#92610a; --bad:#9c2a23; --badt:#f6e0dc; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink); font: 25px/1.45 "IBM Plex Sans", sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .s { width: 1280px; height: 720px; padding: 52px 64px 44px; position: relative; overflow: hidden; page-break-after: always; display: flex; flex-direction: column; }
+  .s:last-child { page-break-after: auto; }
+  h1, h2 { font-family: "Source Serif 4", Georgia, serif; font-weight: 600; margin: 0; letter-spacing: -0.012em; }
+  h2 { font-size: 38px; line-height: 1.16; max-width: 1100px; }
+  .foot { position: absolute; left: 64px; right: 64px; bottom: 20px; display: flex; justify-content: space-between; font: 14px "IBM Plex Mono", monospace; color: var(--ink2); }
+  .src { font-size: 14.5px; color: var(--ink2); }
+  .body { flex: 1; margin-top: 30px; min-height: 0; }
+  .cols { display: grid; gap: 24px; align-items: start; }
+  .card { background: var(--sheet); border: 1px solid var(--rule); padding: 18px 20px; }
+  .card h3 { font: 600 16px "IBM Plex Sans"; color: var(--ink2); margin: 0 0 8px; }
+  ul { margin: 0; padding-left: 22px; } li { margin-bottom: 16px; }
+  table { border-collapse: collapse; width: 100%; font-size: 21px; background: var(--sheet); }
+  th { text-align: left; font-weight: 500; font-size: 15px; color: var(--ink2); padding: 9px 13px; border: 1px solid var(--rule); }
+  td { padding: 10px 13px; border: 1px solid var(--rule); vertical-align: top; }
+  .us td { background: #eaf1ec; font-weight: 500; }
+  .big { font: 600 44px "Source Serif 4", serif; line-height: 1.05; display: block; margin-bottom: 4px; }
+  .shot { width: 100%; border: 1px solid var(--rule); display: block; }
+  .red { color: var(--bad); } .green { color: var(--good); }
+  .flow { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--rule); background: var(--sheet); }
+  .flow div { padding: 22px 16px; border-right: 1px solid var(--rule); font-size: 21px; } .flow div:last-child { border-right: 0; }
+  .flow b { display: block; font: 600 23px "Source Serif 4", serif; margin-bottom: 6px; }
+  .arch { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 18px; align-items: stretch; }
+  .box { background: var(--sheet); border: 1px solid var(--rule); padding: 16px 18px; font-size: 20px; }
+  .box b { display: block; font-size: 21px; margin-bottom: 4px; }
+  .vultr { border: 2px solid var(--pine); padding: 16px; display: grid; gap: 12px; position: relative; }
+  .vultr > span { font: 500 14px "IBM Plex Mono", monospace; color: var(--pine); }
+  .title { background: var(--pine); color: #f6f3ec; justify-content: center; }
+  .title h1 { font-size: 92px; letter-spacing: -0.02em; }
+  .title h1 i { font-style: normal; color: #e2a59e; }
+  .title p { font-size: 28px; max-width: 900px; margin: 14px 0 0; color: #dfe7e1; }
+  .title .meta { position: absolute; left: 64px; bottom: 44px; font: 17px "IBM Plex Mono", monospace; color: #c6d3cc; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<section class="s title">
+  <h1>Cross<i>exam</i></h1>
+  <p>A procurement agent that checks vendor claims against public records, then looks for what the vendor left out.</p>
+  <div class="meta">Vultr Agent Rush Hackathon / Powering the Future of Work / Procurement<br>Muchen Su / {{URL}}</div>
+</section>
+
+<section class="s">
+  <h2>A vendor's reference list is a list of the contracts that went well</h2>
+  <div class="body cols" style="grid-template-columns: 1.15fr 1fr;">
+    <ul>
+      <li>Federal buyers can read contractor report cards in CPARS. <b>Nobody else can.</b> A contractor sees only its own record.</li>
+      <li>Yet prime contractors are generally responsible for judging their own subcontractors (FAR 9.104-4).</li>
+      <li>State and local buyers spend about $2 trillion a year, by common estimates, with no such window.</li>
+      <li>So most of them rely on what the vendor tells them.</li>
+    </ul>
+    <div class="card">
+      <h3>The answer is mostly public</h3>
+      <span class="big">$755B</span>
+      obligated through federal contracts in fiscal 2024.
+      <p style="margin:14px 0 0">Every modification is published, terminations for default included. Nobody has time to read them for every bidder.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sources: GAO snapshot of government-wide contracting FY2024; FAR 9.104-4; CPARS guidance</span><span>2</span></div>
+</section>
+
+<section class="s">
+  <h2>Confirming a claim is the easy half</h2>
+  <div class="body">
+    <table style="font-size:24px">
+      <tr><th style="width:30%">What the vendor said</th><th style="width:30%">Forward pass: does the record match?</th><th>Reverse pass: what happened after award?</th></tr>
+      <tr>
+        <td style="font-family:'Source Serif 4',serif">Construction of a maintenance shop for a federal health agency. Value $796,228. <b>Successfully completed.</b></td>
+        <td class="green"><b>Passes.</b><br>Contract number, customer, value and dates all match.</td>
+        <td class="red"><b>Terminated for default.</b><br>Modification on 2026-09-14. Funding down 34% from its peak.</td>
+      </tr>
+    </table>
+    <p style="margin:26px 0 0;max-width:1050px">Any tool that only verifies what it is told would pass this vendor. Crossexam runs a fixed second pass aimed at what a vendor has no reason to mention, including defaults on contracts it never listed.</p>
+    <p class="src" style="margin-top:16px">The contract record is real. The vendor statement was invented for this demo, and no real company made it.</p>
+  </div>
+  <div class="foot"><span>Source: USAspending.gov</span><span>3</span></div>
+</section>
+
+<section class="s">
+  <h2>From a PDF to a signed decision</h2>
+  <div class="body">
+    <div class="flow">
+      <div><b>1. Open</b>File parsed in a gVisor sandbox, no network or secrets. Hidden text separated out.</div>
+      <div><b>2. Read</b>Model on Vultr lists the claims. Each must quote the document exactly.</div>
+      <div><b>3. Forward</b>Recipient, value, dates and customer compared with the federal record.</div>
+      <div><b>4. Reverse</b>All modifications, full contract history, exclusions, sanctions, SEC filings.</div>
+      <div><b>5. Decide</b>Rules set the outcome. Model drafts the letter. A named person signs.</div>
+    </div>
+    <div class="cols" style="grid-template-columns: repeat(3, 1fr); margin-top: 22px;">
+      <div class="card"><h3>Output for the buyer</h3>Side-by-side vendor comparison and a review memo.</div>
+      <div class="card"><h3>Output for the vendor</h3>A neutral clarification letter, sent only after a person approves it.</div>
+      <div class="card"><h3>Output for the audit file</h3>SHA-256 of every public record response behind a finding.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Crossexam</span><span>4</span></div>
+</section>
+
+<section class="s" style="padding-bottom:30px">
+  <h2>Each claim, both passes, side by side</h2>
+  <div class="body" style="margin-top:16px;overflow:hidden">
+    <img class="shot" src="shot_b.png" alt="Vendor dossier" style="height:560px;object-fit:cover;object-position:top">
+  </div>
+  <div class="foot" style="bottom:8px"><span>Live demo: {{URL}}</span><span>5</span></div>
+</section>
+
+<section class="s">
+  <h2>The model reads and drafts. It does not decide</h2>
+  <div class="body cols" style="grid-template-columns: 1.3fr 1fr;">
+    <img class="shot" src="shot_d.png" alt="Hidden instruction found" style="height:470px;object-fit:cover;object-position:top">
+    <ul style="font-size:23px">
+      <li>Vendor files come from the party being judged, so they are untrusted input.</li>
+      <li>This one hides white text telling reviewers to mark everything verified.</li>
+      <li>The sandbox finds it. The model never receives it. The outcome does not move.</li>
+      <li>Verdicts come from fixed rules over public records. A source that fails to answer rules out a clean result.</li>
+    </ul>
+  </div>
+  <div class="foot"><span>app/rules.py, app/pipeline.py</span><span>6</span></div>
+</section>
+
+<section class="s">
+  <h2>A forward check cannot see a contract that went bad after award</h2>
+  <div class="body cols" style="grid-template-columns: 1.55fr 1fr;">
+    <table>
+      <tr><th>Forged claims built on real federal contracts</th><th>Forward only</th><th>With reverse</th></tr>
+      <tr><td>Inflated value, wrong owner, invented number, stretched dates</td><td>80 of 80</td><td>80 of 80</td></tr>
+      <tr><td>Terminated for default, claimed as completed</td><td class="red"><b>0 of 20</b></td><td class="green"><b>20 of 20</b></td></tr>
+      <tr><td>Accurate claim, default on another contract left out</td><td class="red"><b>0 of 20</b></td><td class="green"><b>19 of 20</b></td></tr>
+    </table>
+    <div class="cols">
+      <div class="card"><span class="big">1 of 50</span>honest claims sent to a person for review</div>
+      <div class="card"><span class="big">41 → 50</span>of 50 real default terminations found once action codes were read as well as text</div>
+    </div>
+  </div>
+  <p class="src" style="margin:0 0 18px">We wrote these forgeries knowing the rules, so this shows the checks work end to end on real records. It is not a field accuracy rate.</p>
+  <div class="foot"><span>bench/run.py, results published in the repository</span><span>7</span></div>
+</section>
+
+<section class="s">
+  <h2>Vultr is the backend for the whole workflow</h2>
+  <div class="body arch">
+    <div style="display:grid;gap:14px;align-content:start">
+      <div class="box"><b>Browser</b>Public web app, no install</div>
+      <div class="box"><b>Procurement officer</b>Approves letters, signs decisions</div>
+    </div>
+    <div class="vultr">
+      <span>Vultr Cloud Compute</span>
+      <div class="box"><b>Web app and review protocol</b>Fixed order, enforced in code</div>
+      <div class="box"><b>Rules engine</b>The only place verdicts are set</div>
+      <div class="box"><b>gVisor sandbox, one per document</b>No network, no secrets, read-only, 256 MB, 20 s, destroyed after use</div>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <div class="box" style="border:2px solid var(--pine)"><b>Vultr Serverless Inference</b>Claim extraction and letters</div>
+      <div class="box"><b>Public records</b>USAspending.gov, SAM.gov exclusions, OFAC SDN, SEC EDGAR</div>
+    </div>
+  </div>
+  <div class="foot"><span>Source: {{REPO}}</span><span>8</span></div>
+</section>
+
+<section class="s">
+  <h2>Market and revenue</h2>
+  <div class="body cols" style="grid-template-columns: 1fr 1fr 1fr;">
+    <div class="card"><h3>Who pays</h3>
+      <ul style="font-size:22px"><li>Prime contractors vetting subcontractors</li><li>State and local procurement offices</li><li>Universities and hospitals buying under public rules</li></ul>
+    </div>
+    <div class="card"><h3>Proposed pricing</h3>
+      <span class="big">$49</span>per vendor check
+      <p style="margin:12px 0 0"><b>$499 a month</b> for 25 checks and a shared case desk. API for enterprise.</p>
+    </div>
+    <div class="card"><h3>Unit cost</h3>
+      <span class="big">{{COST}}</span>model cost per vendor, measured on Vultr Serverless Inference
+      <p style="margin:12px 0 0">Public records cost nothing to read.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-bottom:24px"><b>Sizing, on stated assumptions:</b> 108,899 companies received federal awards in fiscal 2024. If 5% took the $499 plan, that is about <b>$32.6M a year</b>, before state and local buyers.</div>
+  <div class="foot"><span>Company count: GovSpend FY2024. Pricing and adoption are our assumptions.</span><span>9</span></div>
+</section>
+
+<section class="s">
+  <h2>Where it sits among existing tools</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width:24%">Tool</th><th style="width:27%">Main input</th><th>Question it answers</th><th style="width:21%">Price signal</th></tr>
+      <tr><td>CPARS</td><td>Government ratings</td><td>How did this contractor perform?</td><td>Closed to outsiders</td></tr>
+      <tr><td>ISNetworld, Avetta</td><td>Data the supplier submits</td><td>Is this contractor prequalified?</td><td>About $50k a year for hiring clients*</td></tr>
+      <tr><td>Exiger, Interos</td><td>Supply chain risk data</td><td>Where is my supply chain exposed?</td><td>Enterprise quotes</td></tr>
+      <tr><td>Contract data search</td><td>Award records</td><td>What contracts exist?</td><td>A person still reads and compares</td></tr>
+      <tr class="us"><td>Crossexam</td><td>The vendor's own statement plus public records</td><td>Is this claim true, and what was left out?</td><td>$49 per check</td></tr>
+    </table>
+    <p class="src" style="margin-top:12px">*ISNetworld starting price from third-party review sites. Vendors do not publish full pricing.</p>
+  </div>
+  <div class="foot"><span>Based on public product descriptions</span><span>10</span></div>
+</section>
+
+<section class="s">
+  <h2>What comes next</h2>
+  <div class="body cols" style="grid-template-columns: 1fr 1fr;">
+    <div class="card"><h3>Next 90 days</h3>
+      <ul style="font-size:24px"><li>Three design partners among prime contractors</li><li>SAM.gov API in place of the exclusions export</li><li>Vendor reply loop that re-checks answers</li><li>State open-data contract sources</li></ul>
+    </div>
+    <div class="card"><h3>What it does not do today</h3>
+      <ul style="font-size:24px"><li>Federal records only. Other contracts come back unverifiable and need a reference.</li><li>A flag is a lead for a person, and says nothing about intent.</li><li>No paying customers yet.</li></ul>
+    </div>
+  </div>
+  <p style="margin:0 0 26px;font-size:24px"><b>Try it:</b> {{URL}}</p>
+  <div class="foot"><span>{{REPO}}</span><span>11</span></div>
+</section>
+
+</body>
+</html>

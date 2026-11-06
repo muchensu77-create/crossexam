@@ -8,3 +8,4 @@ data/
 *.db-shm
 .pytest_cache/
 .claude/
+docs/_deck_rendered.html
